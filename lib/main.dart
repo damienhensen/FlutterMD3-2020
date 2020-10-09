@@ -16,20 +16,29 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: Scaffold(
-        appBar: AppBar(
-          title: Text("Our first App"),
-        ),
-        body: Center(
-            child: Column(
-          children: [
-            MyWidget(),
-            buildMyWidget("Damien", 60.0),
-            buildMyWidget("Silvan", 300.0),
-            buildMyWidget("Robin", 40.0),
-            buildMyWidget("Simon", 70.0),
-          ],
-        )),
-      ),
+          appBar: AppBar(
+            title: Text("Our first App"),
+          ),
+          body: ListView(
+            children: [
+              Center(
+                  child: Column(
+                children: [
+                  MyWidget(),
+                  MyWidget(),
+                  MyWidget(),
+                  MyWidget(),
+                  MyWidget(),
+                  buildMyWidget("Damien", 60.0),
+                  buildMyWidget("Johan", 50.0),
+                  buildMyWidget("klaas", 80.0),
+                  buildMyWidget("Silvan", 120.0),
+                  buildMyWidget("Robin", 40.0),
+                  buildMyWidget("Simon", 70.0),
+                ],
+              )),
+            ],
+          )),
     );
   }
 
