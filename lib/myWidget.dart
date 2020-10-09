@@ -19,4 +19,16 @@ class _MyWidgetState extends State<MyWidget> {
       ),
     );
   }
+
+  String shuffleString(String str) {
+    var list = str.split('');
+    list.shuffle();
+    str = '';
+
+    for (var s in list) {
+      str += s;
+    }
+
+    return str;
+  }
 }
