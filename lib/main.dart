@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hello_md3/myWidget.dart';
 
 void main() {
   runApp(MyApp());
@@ -21,23 +22,25 @@ class MyApp extends StatelessWidget {
         body: Center(
             child: Column(
           children: [
-            buildMyWidget(),
-            buildMyWidget(),
-            buildMyWidget(),
-            buildMyWidget(),
+            MyWidget(),
+            buildMyWidget("Damien", 60.0),
+            buildMyWidget("Silvan", 300.0),
+            buildMyWidget("Robin", 40.0),
+            buildMyWidget("Simon", 70.0),
           ],
         )),
       ),
     );
   }
 
-  Widget buildMyWidget() {
+  Widget buildMyWidget(var name, var height) {
     return Padding(
       padding: EdgeInsets.all(5),
       child: Container(
         color: Colors.blue,
-        height: 200,
+        height: height,
         width: 200,
+        child: Text(name),
       ),
     );
   }
