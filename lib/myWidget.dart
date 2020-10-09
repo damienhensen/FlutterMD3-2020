@@ -7,17 +7,27 @@ class MyWidget extends StatefulWidget {
 
 class _MyWidgetState extends State<MyWidget> {
   @override
+  var text = "Widget Class";
+
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.all(5),
-      child: Container(
-        color: Colors.blue,
-        height: 20,
-        width: 200,
-        child: Text("Widget Class",
-            textAlign: TextAlign.center, style: TextStyle(color: Colors.white)),
-      ),
-    );
+    return GestureDetector(
+        onTap: () {
+          print('tapped');
+          this.setState(() {
+            text = shuffleString(text);
+          });
+        },
+        child: Padding(
+          padding: EdgeInsets.all(5),
+          child: Container(
+            color: Colors.deepPurple,
+            height: 50,
+            width: 200,
+            child: Text(text,
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Colors.white)),
+          ),
+        ));
   }
 
   String shuffleString(String str) {
