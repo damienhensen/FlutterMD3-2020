@@ -5,6 +5,7 @@ class SnackBarPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: RaisedButton(
+        child: Text('Open SnackBar'),
         onPressed: () {
           final snackBar = SnackBar(
             content: Row(
@@ -21,7 +22,7 @@ class SnackBarPage extends StatelessWidget {
             action: SnackBarAction(
               label: 'Close SnackBar',
               onPressed: () {
-                // Some code to undo the change.
+                Scaffold.of(context).hideCurrentSnackBar();
               },
             ),
           );
@@ -30,7 +31,6 @@ class SnackBarPage extends StatelessWidget {
           // it to show a SnackBar.
           Scaffold.of(context).showSnackBar(snackBar);
         },
-        child: Text('Open SnackBar'),
       ),
     );
   }
