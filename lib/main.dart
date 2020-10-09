@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hello_md3/myWidget.dart';
+import 'snackbarWidget.dart';
 
 void main() {
   runApp(MyApp());
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
           ),
           body: ListView(
             children: [
+              SnackBarPage(),
               Center(
                   child: Column(
                 children: [
